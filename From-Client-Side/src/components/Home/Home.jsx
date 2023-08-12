@@ -17,7 +17,7 @@ const Home = () => {
 
           console.log(add);
           // server data post start 
-          fetch('http://localhost:5000/from', {
+          fetch('https://from-server-side.vercel.app/from', {
                method: 'POST',
                headers: {
                     'content-type': 'application/json'
@@ -28,11 +28,12 @@ const Home = () => {
                .then(data => {
                     if (data.insertedId) {
                          Swal.fire({
-                              title: 'Success!',
-                              text: 'Your Toy Add Successful !!',
+                              position: 'top-end',
                               icon: 'success',
-                              confirmButtonText: 'Ok'
-                         })
+                              title: 'Your From has been structure database Successful',
+                              showConfirmButton: false,
+                              timer: 1500
+                            })
                     }
                     // server data post exit 
                })
